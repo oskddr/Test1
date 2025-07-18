@@ -87,7 +87,6 @@ h1:hover::after, h2:hover::after, h3:hover::after, h4:hover::after, h5:hover::af
         gap: var(--itemHolderItemGaps);
         overflow-x: hidden;
     }
-
     [id-list-number="1"]{
         height: 175px;
         width: 100%;
@@ -1360,18 +1359,28 @@ h1:hover::after, h2:hover::after, h3:hover::after, h4:hover::after, h5:hover::af
 }
 
 @media only screen and (min-width: 426px) and (max-width: 768px){
+    #scrolling{
+        opacity: 0;
+    }
+    [section="bottom"]{
+        opacity: 0;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 425px){
     body{
         background-color: red;
     }
-    #scrolling{
-        position: relative;
-        width: 460px;
-        height: var(--itemHolderHeight);
-        border: var(--itemHolderBorder);
-        display: flex;
-        flex-direction: column;
-        gap: var(--itemHolderItemGaps);
-        overflow-x: hidden;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 375px){
+    body{
+        background-color: blue;
     }
-    
+}
+
+@media only screen and (max-width: 320px){
+    body{
+        background: yellow;
+    }
 }
