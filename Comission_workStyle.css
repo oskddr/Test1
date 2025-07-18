@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Cedarville+Cursive&family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+Code+Latin:wght@100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+SC:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Playwrite+HU:wght@100..400&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Share+Tech+Mono&family=Special+Gothic+Expanded+One&family=Unbounded:wght@200..900&display=swap');
+@font-face{font-family: Mooxy; src: url(Resources/fonts/mooxy.ttf);}
+@font-face{font-family: Agile; src: url(Resources/fonts/agile.ttf);}
+@font-face{font-family: Tech; src: url(Resources/fonts/Tech.otf);}
+
+:root{
+    --webkitScrollBar: none;
+
+    --boxSizing: border-box;
+
+    --backgroundColor: #101010;
+    --textColor: #fff;
+    --mainFont: Mooxy;
+    --secondFont: Agile;
+    --thirdFont: sans-serif;
+    --fourthFont: Tech;
+    --topPadding: 20px;
+
+    --ImgwebkitUserDrag: none;
+    --ImgUserSelect: none;
+    --ImgPointerEvents: auto;
+
+    --itemsHolderHight: 15000px;
+    --itemsHolderWidth: 1000px;
+    --itemsHolderBorder: 1px solid red;
+    --itemsHolderGaps: 50px;
+}
+
+body::-webkit-scrollbar{
+    display: var(--webkitScrollBar);
+}
+
+*{
+    box-sizing: var(--boxSizing);
+}
+
+body{
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    font-family: var(--mainFont);
+    padding-top: var(--topPadding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden scroll;
+    gap: 50px;
+}
+
+img{
+    -webkit-user-drag: var(--ImgwebkitUserDrag);
+    user-select: var(--ImgUserSelect);
+    pointer-events: var(--ImgPointerEvents);
+}
+
+[border-active="true"]{
+    border: 1px solid red;
+}
+
+[image-container]>*{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, p:hover, span:hover, li:hover,
+h1:hover::before, h2:hover::before, h3:hover::before, h4:hover::before, h5:hover::before, h6:hover::before, p:hover::before, span:hover::before, li:hover::before,
+h1:hover::after, h2:hover::after, h3:hover::after, h4:hover::after, h5:hover::after, h6:hover::after, p:hover::after, span:hover::after, li:hover::after {
+    cursor: default;
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 2560px){
+    #scrolling{
+        position: relative;
+        width: var(--itemsHolderWidth);
+        height: var(--itemsHolderHight);
+        border: var(--itemsHolderBorder);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--itemsHolderGaps);
+        overflow-x: hidden;
+    }
+    #scrolling [h1-ELMT]{
+        position: relative;
+        font-size: 4rem;
+        transform: translateY(-25px);
+        font-family: var(--secondFont);
+    }
+    #scrolling [h1-ELMT]::before{
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 101%;
+        height: 4px;
+        background-color: #de3738;
+        border-radius: 50%;
+    }
+    #scrolling [h2-ELMT]{
+        font-size: 3.5rem;
+        transform: translate(-330px, -30px);
+        margin: 0;
+    }
+    #scrolling [h3-ELMT]{
+        position: absolute;
+        top: 216pc;
+        left: 2px;
+        font-size: 3.5rem;
+        margin: 0;
+    }
+    #scrolling #item-locks{
+        position: relative;
+        width: 100%;
+        height: 95%;
+        transform: translateY(-80px);
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    #scrolling #item-locks >*{
+        position: relative;
+        height: 540px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #scrolling #item-locks >* [h2-ELMT]{
+        position: absolute;
+        top: 40px;
+        right: -334px;
+        width: 99%;
+        font-size: 2.5rem;
+       font-family: var(--secondFont);
+    }
+     #scrolling #item-locks >* [h2-ELMT]{
+        position: absolute;
+        top: 40px;
+        right: -334px;
+        width: 99%;
+        font-size: 2.5rem;
+       font-family: var(--secondFont);
+    }
+    #scrolling #item-locks >* #video-lock, #scrolling #item-locks >* #image-lock{
+        width: 850px;
+        height: 320px;
+        overflow: hidden;
+        transform: translate(-55px, -30px);
+    }
+    #scrolling #item-locks >* #video-lock >*, #scrolling #item-locks >* #image-lock >*{
+        height: 100%;
+        min-width: 80%;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #111111;
+        border: 2px solid #fff;
+        opacity: .5;
+        z-index: 2;
+        transition: .5s ease-in;
+    }
+    #scrolling #item-locks >*,#scrolling #item-locks >* #video-lock >*,#scrolling #item-locks >* #image-lock >*{opacity :5; transition: .4s ease-in;}
+    #scrolling #item-locks >*.active,#scrolling #item-locks >*.active #video-lock >*,#scrolling #item-locks >*.active #image-lock >*{opacity: 1; cursor:pointer;}
+
+    #scrolling #item-locks >* p{
+        position: absolute;
+        top: 390px;
+        right: 0;
+        width: 98%;
+        height: 60px;
+        font-family: var(--thirdFont);
+        font-weight: 800;
+        font-size: 1.2rem;
+        transform: translateY(10px);
+    }
+    #scrolling #item-locks >* p span{
+        position: relative;
+        color: #de3738;
+        font-family: sans-serif;
+        font-weight: bold;
+        line-height: 1.6;
+    }
+    #scrolling #item-locks >* p span::before{
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #de3738;
+        border-radius: 50px;
+    }
+    #scrolling #item-locks >* p [a]{
+        position: relative;
+        background-color: transparent;
+        margin: 0 10px 0 10px;
+        padding: 0 5px 0 5px;
+        font-family: 'Fira Code';
+        font-size: 1rem;
+        color: #e0872b;
+        font-weight: 400;
+    }
+    #scrolling #item-locks >* p [a]::before{
+        content: '';
+        position: absolute;
+        top: -2.5%;
+        left: -5%;
+        width: 110%;
+        height: 105%;
+        background-color: #050505;
+        border: 1px solid #e0872b;
+        border-radius: 5px;
+        transition: .5s ease-in;
+        z-index: -1;
+    }
+    #scrolling #item-locks >* p [a]:hover::before{
+        box-shadow: 0 0 5px #e0872b;
+        cursor: pointer;
+    }
+    #scrolling #item-locks >* p [b]{
+        position: relative;
+        background-color: transparent;
+        margin: 0 10px 0 10px;
+        padding: 0 5px 0 5px;
+        font-family: 'Fira Code';
+        font-size: 1rem;
+        color: #007FFF;
+        font-weight: 400;
+    }
+    #scrolling #item-locks >* p [b]::before{
+        content: '';
+        position: absolute;
+        top: -2.5%;
+        left: -5%;
+        width: 110%;
+        height: 105%;
+        background-color: #050505;
+        border: 1px solid #007FFF;
+        border-radius: 5px;
+        transition: .5s ease-in;
+        z-index: -1;
+    }
+    #scrolling #item-locks >* p [b]::before:hover{
+        box-shadow: 0 0 5px #007FFF;
+        cursor: pointer;
+    }
+    #scrolling #item-locks >* #needed-container{
+        position: absolute;
+        top: 480px;
+        right: 0;
+        height: 60px;
+        width: 99%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+    }
+    #scrolling #item-locks >* #needed-container #need{
+        position: relative;
+        width: 60px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: all .3s;
+    }
+    #scrolling #item-locks >* #needed-container #need #maincontent-lock{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        backdrop-filter: blur(0px);
+        letter-spacing: 0.8px;
+        border-radius: 10px;
+        transition: all .3s;
+        border: 1px solid #9c9c9c77;
+    }
+    #scrolling #item-locks >* #needed-container #need #maincontent-lock #v-lock{
+       width: 75%;
+       height: 75%;
+    }
+    #scrolling #item-locks >* #needed-container #need #behindlay-lock {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: #181818;
+        z-index: -1;
+        border-radius: 10px;
+        pointer-events: none;
+        transition: all .3s;
+    }
+    #scrolling #item-locks >* #needed-container #need:hover #behindlay-lock {
+        transform: rotate(35deg);
+        transform-origin: bottom;
+    }
+    #scrolling #item-locks >* #needed-container #need:hover #maincontent-lock {
+        background-color: rgba(156, 156, 156, 0.466);
+        backdrop-filter: blur(4px);
+        cursor: pointer;
+    }
+
+    #return-lock{
+        position: absolute;
+        left: 35px;
+        top: 35px;
+        width: 130px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #return-lock [data-return]{
+        position: relative;
+        width: 125px;
+        height: 35px;
+        border-radius: 7px;
+        border-left: 2px solid #de3738;
+        border-right: 2px solid #de3738;
+        transition: .6s;
+    }
+    [data-return]:hover{
+        box-shadow:inset 0 0 18px #de3738;
+        cursor: pointer;
+        filter: drop-shadow(2px 2px 18px #de3738);
+    }
+    #return-lock [data-return] #retArrow{
+        width: 35px;
+        height: 35px;
+        transform: translateX(8px);
+        transition: .6s;
+    }
+    #return-lock [data-return]:hover #retArrow{
+        transform: translateX(0px);
+    }
+    #return-lock [data-return] h2{
+        font-size: 1.3rem;
+        font-family: var(--thirdFont);
+        transform: translate(50px, -47px);
+    }
+}
